@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/bipSelect.wav-a42868b5c2cc983d9c6dad3a18a79ffb.sample"
+
+[deps]
+
+source_file="res://Main Resources/Sonidos/Interfaz/bipSelect.wav"
+dest_files=[ "res://.import/bipSelect.wav-a42868b5c2cc983d9c6dad3a18a79ffb.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

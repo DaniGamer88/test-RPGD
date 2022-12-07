@@ -1,0 +1,526 @@
+[gd_scene load_steps=28 format=2]
+
+[ext_resource path="res://Main Resources/Sprites/Interfaz/Pausa/37 sin título_20220619212738.png" type="Texture" id=1]
+[ext_resource path="res://Main Resources/Sprites/Interfaz/Pausa/21 sin título_20220118143737.png" type="Texture" id=2]
+[ext_resource path="res://Main Resources/Sprites/Interfaz/Pausa/21 sin título_20220118143747.png" type="Texture" id=3]
+[ext_resource path="res://Main Resources/Fuentes/Coder's Crux.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Escenas/Interfaces/Pausa/Interfaz_pausa.gd" type="Script" id=5]
+[ext_resource path="res://Main Resources/Fuentes/PixelatedPusab.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Main Resources/Sprites/Interfaz/Pausa/43 sin título_20220630110745.png" type="Texture" id=7]
+[ext_resource path="res://Main Resources/Sprites/Interfaz/Pausa/44 sin título_20220630105634.png" type="Texture" id=8]
+[ext_resource path="res://Main Resources/Sprites/Interfaz/Pausa/44 sin título_20220630112632.png" type="Texture" id=9]
+[ext_resource path="res://Main Resources/Sprites/Interfaz/Pausa/44 sin título_20220630184000.png" type="Texture" id=10]
+[ext_resource path="res://Main Resources/Sprites/Interfaz/Pausa/44 sin título_20220724101312.png" type="Texture" id=11]
+[ext_resource path="res://Main Resources/Sprites/otros/progress_bars/4_sin_titulo_20220807134320.png" type="Texture" id=12]
+[ext_resource path="res://Main Resources/Sprites/otros/progress_bars/4_sin_titulo_20220807134317.png" type="Texture" id=13]
+[ext_resource path="res://Main Resources/Sprites/Interfaz/Pausa/5_sin_titulo_20220807162254.png" type="Texture" id=14]
+
+[sub_resource type="DynamicFont" id=6]
+size = 40
+outline_size = 5
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=110]
+size = 22
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=111]
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 25
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 15
+font_data = ExtResource( 4 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "Low_battery"
+length = 2.0
+loop = true
+step = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:tint_over")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "cargando"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:tint_over")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0, 0.788235, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=109]
+resource_name = "focus"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_size")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 0.267943, 0.176777 ),
+"update": 0,
+"values": [ Vector2( 90, 90 ), Vector2( 117, 117 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect_position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 0.267943, 0.176777 ),
+"update": 0,
+"values": [ Vector2( 181, 257 ), Vector2( 169, 241 ) ]
+}
+
+[sub_resource type="Animation" id=108]
+resource_name = "focus"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_size")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 0.267943, 0.176777 ),
+"update": 0,
+"values": [ Vector2( 90, 90 ), Vector2( 117, 117 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect_position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 0.267943, 0.176777 ),
+"update": 0,
+"values": [ Vector2( 317, 257 ), Vector2( 303, 241 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "focus"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 0.225313, 0.329877 ),
+"update": 0,
+"values": [ Vector2( 453, 241 ), Vector2( 437, 225 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 0.225313, 0.329877 ),
+"update": 0,
+"values": [ Vector2( 117, 117 ), Vector2( 150, 150 ) ]
+}
+
+[sub_resource type="Animation" id=106]
+resource_name = "focus"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_size")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 0.267943, 0.176777 ),
+"update": 0,
+"values": [ Vector2( 90, 90 ), Vector2( 117, 117 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect_position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 0.267943, 0.176777 ),
+"update": 0,
+"values": [ Vector2( 613, 257 ), Vector2( 597, 241 ) ]
+}
+
+[sub_resource type="Animation" id=107]
+resource_name = "focus"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_size")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 0.267943, 0.176777 ),
+"update": 0,
+"values": [ Vector2( 90, 90 ), Vector2( 117, 117 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect_position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 0.267943, 0.176777 ),
+"update": 0,
+"values": [ Vector2( 741, 257 ), Vector2( 728, 241 ) ]
+}
+
+[node name="Interfaz_pausa" type="CanvasLayer"]
+pause_mode = 2
+script = ExtResource( 5 )
+
+[node name="Cuadro" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -470.0
+margin_top = -279.5
+margin_right = 470.0
+margin_bottom = 279.5
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="window" type="TextureRect" parent="Cuadro"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="tittle" type="Label" parent="Cuadro"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -259.0
+margin_top = 24.0
+margin_right = 256.0
+margin_bottom = 64.0
+custom_fonts/font = SubResource( 6 )
+text = "PAUSA"
+align = 1
+valign = 1
+
+[node name="bar_life_player" type="TextureProgress" parent="Cuadro"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -301.0
+margin_top = -153.5
+margin_right = 300.0
+margin_bottom = -118.5
+max_value = 5.0
+step = 0.01
+value = 2.0
+texture_under = ExtResource( 12 )
+texture_progress = ExtResource( 13 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="tittle" type="Label" parent="Cuadro/bar_life_player"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -35.5
+margin_right = 20.0
+margin_bottom = -12.5
+custom_fonts/font = SubResource( 110 )
+text = "HP"
+align = 1
+valign = 1
+
+[node name="text" type="Label" parent="Cuadro/bar_life_player"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -212.5
+margin_top = -11.5
+margin_right = 212.5
+margin_bottom = 11.5
+custom_fonts/font = SubResource( 110 )
+text = "5/5"
+align = 1
+valign = 1
+
+[node name="money" type="Label" parent="Cuadro"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 60.0
+margin_top = -25.0
+margin_right = 225.0
+margin_bottom = -9.0
+custom_fonts/font = SubResource( 111 )
+text = "921312"
+valign = 1
+
+[node name="ico" type="TextureRect" parent="Cuadro/money"]
+margin_left = -31.0
+margin_top = -6.0
+margin_right = -6.0
+margin_bottom = 19.0
+texture = ExtResource( 14 )
+
+[node name="hora_bateria" type="Control" parent="Cuadro"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -72.0
+margin_top = -27.0
+margin_right = 72.0
+margin_bottom = -3.0
+
+[node name="Reloj" type="Control" parent="Cuadro/hora_bateria"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -11.5
+margin_right = 80.0
+margin_bottom = 11.5
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="text" type="Label" parent="Cuadro/hora_bateria/Reloj"]
+anchor_left = 0.1375
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 1 )
+text = "19:45AM"
+align = 2
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="separador" type="Label" parent="Cuadro/hora_bateria"]
+anchor_left = 0.608333
+anchor_top = 0.229167
+anchor_right = 0.670833
+anchor_bottom = 0.979167
+margin_left = -5.6
+margin_top = 0.5
+margin_right = -5.60001
+margin_bottom = 0.5
+custom_fonts/font = SubResource( 1 )
+text = "|"
+align = 2
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="bateria" type="Control" parent="Cuadro/hora_bateria"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -53.0
+margin_top = -6.0
+margin_bottom = 10.0
+
+[node name="barbatery" type="TextureProgress" parent="Cuadro/hora_bateria/bateria"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -6.5
+margin_right = 29.0
+margin_bottom = 6.5
+step = 0.001
+value = 11.0
+allow_greater = true
+texture_over = ExtResource( 2 )
+texture_progress = ExtResource( 3 )
+
+[node name="porcent_Text" type="Label" parent="Cuadro/hora_bateria/bateria/barbatery"]
+margin_left = 25.0
+margin_right = 55.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 2 )
+text = "100%"
+align = 1
+valign = 1
+clip_text = true
+
+[node name="Animacion" type="AnimationPlayer" parent="Cuadro/hora_bateria/bateria/barbatery"]
+anims/Low_battery = SubResource( 3 )
+anims/RESET = SubResource( 4 )
+anims/cargando = SubResource( 5 )
+
+[node name="Objetos_clave" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -331.0
+margin_top = -43.0
+margin_right = -241.0
+margin_bottom = 47.0
+focus_neighbour_right = NodePath("../Objetos")
+texture_normal = ExtResource( 11 )
+expand = true
+
+[node name="anim" type="AnimationPlayer" parent="Objetos_clave"]
+anims/focus = SubResource( 109 )
+
+[node name="Objetos" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -195.0
+margin_top = -43.0
+margin_right = -105.0
+margin_bottom = 47.0
+focus_neighbour_left = NodePath("../Objetos_clave")
+focus_neighbour_right = NodePath("../continue")
+texture_normal = ExtResource( 10 )
+expand = true
+
+[node name="anim" type="AnimationPlayer" parent="Objetos"]
+anims/focus = SubResource( 108 )
+
+[node name="continue" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -59.0
+margin_top = -59.0
+margin_right = 58.0
+margin_bottom = 58.0
+focus_neighbour_left = NodePath("../Objetos")
+focus_neighbour_right = NodePath("../quit")
+texture_normal = ExtResource( 7 )
+expand = true
+
+[node name="anim" type="AnimationPlayer" parent="continue"]
+anims/focus = SubResource( 8 )
+
+[node name="quit" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 101.0
+margin_top = -43.0
+margin_right = 191.0
+margin_bottom = 47.0
+focus_neighbour_left = NodePath("../continue")
+focus_neighbour_right = NodePath("../configuration")
+texture_normal = ExtResource( 8 )
+expand = true
+
+[node name="anim" type="AnimationPlayer" parent="quit"]
+anims/focus = SubResource( 106 )
+
+[node name="configuration" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 229.0
+margin_top = -43.0
+margin_right = 319.0
+margin_bottom = 47.0
+focus_neighbour_left = NodePath("../quit")
+texture_normal = ExtResource( 9 )
+expand = true
+
+[node name="anim" type="AnimationPlayer" parent="configuration"]
+anims/focus = SubResource( 107 )
+
+[connection signal="focus_entered" from="Objetos_clave" to="." method="_on_Objetos_clave_focus_entered"]
+[connection signal="focus_exited" from="Objetos_clave" to="." method="_on_Objetos_clave_focus_exited"]
+[connection signal="focus_entered" from="Objetos" to="." method="_on_Objetos_focus_entered"]
+[connection signal="focus_exited" from="Objetos" to="." method="_on_Objetos_focus_exited"]
+[connection signal="pressed" from="Objetos" to="." method="_on_Objetos_pressed"]
+[connection signal="focus_entered" from="continue" to="." method="_on_continue_focus_entered"]
+[connection signal="focus_exited" from="continue" to="." method="_on_continue_focus_exited"]
+[connection signal="pressed" from="continue" to="." method="_on_continue_pressed"]
+[connection signal="focus_entered" from="quit" to="." method="_on_quit_focus_entered"]
+[connection signal="focus_exited" from="quit" to="." method="_on_quit_focus_exited"]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
+[connection signal="focus_entered" from="configuration" to="." method="_on_configuration_focus_entered"]
+[connection signal="focus_exited" from="configuration" to="." method="_on_configuration_focus_exited"]
+[connection signal="pressed" from="configuration" to="." method="_on_configuration_pressed"]

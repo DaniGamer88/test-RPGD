@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/tittle_apear.mp3-c00b47a91c06da35db6f42b7ec8bf15f.mp3str"
+
+[deps]
+
+source_file="res://Main Resources/Sonidos/Interfaz/tittle_apear.mp3"
+dest_files=[ "res://.import/tittle_apear.mp3-c00b47a91c06da35db6f42b7ec8bf15f.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

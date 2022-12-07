@@ -1,0 +1,211 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Main Resources/Sprites/Interfaz/SaveScreen/104 sin título_20220330205747.png" type="Texture" id=7]
+[ext_resource path="res://Main Resources/Sprites/Interfaz/Windows/71 sin título_20220211102319.png" type="Texture" id=8]
+[ext_resource path="res://Main Resources/Sprites/Interfaz/Windows/71 sin título_20220211102300.png" type="Texture" id=9]
+[ext_resource path="res://Escenas/Interfaces/Menu/InterfazDeleteSave.gd" type="Script" id=10]
+[ext_resource path="res://Main Resources/Sonidos/Interfaz/bipSelect.wav" type="AudioStream" id=11]
+[ext_resource path="res://Main Resources/Fuentes/PKMN RBYGSC.ttf" type="DynamicFontData" id=13]
+[ext_resource path="res://Main Resources/Sonidos/Interfaz/press_arch.wav" type="AudioStream" id=14]
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 13 )
+
+[sub_resource type="StyleBoxTexture" id=70]
+
+[sub_resource type="StyleBoxTexture" id=71]
+
+[sub_resource type="StyleBoxTexture" id=72]
+
+[sub_resource type="StyleBoxTexture" id=73]
+
+[sub_resource type="StyleBoxTexture" id=74]
+
+[sub_resource type="StyleBoxTexture" id=75]
+
+[sub_resource type="Theme" id=24]
+HScrollBar/styles/grabber = SubResource( 70 )
+HScrollBar/styles/grabber_highlight = SubResource( 70 )
+HScrollBar/styles/grabber_pressed = SubResource( 70 )
+HScrollBar/styles/scroll = SubResource( 70 )
+HScrollBar/styles/scroll_focus = SubResource( 71 )
+VScrollBar/styles/grabber = SubResource( 70 )
+VScrollBar/styles/grabber_highlight = SubResource( 72 )
+VScrollBar/styles/grabber_pressed = SubResource( 73 )
+VScrollBar/styles/scroll = SubResource( 74 )
+VScrollBar/styles/scroll_focus = SubResource( 75 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 13 )
+
+[sub_resource type="Animation" id=1]
+resource_name = "Appear"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:X")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[node name="InterfazDeleteSave" type="CanvasLayer"]
+pause_mode = 2
+script = ExtResource( 10 )
+X = false
+
+[node name="CONTROL" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -200.0
+margin_top = -255.5
+margin_right = 200.0
+margin_bottom = 255.5
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Tittle" type="Label" parent="CONTROL"]
+anchor_left = 0.5
+anchor_top = 0.0313112
+anchor_right = 0.5
+anchor_bottom = 0.033431
+margin_left = -117.461
+margin_right = 117.461
+margin_bottom = 16.9167
+custom_fonts/font = SubResource( 4 )
+text = "Borrar archivo"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Window" type="TextureRect" parent="CONTROL"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -204.0
+margin_top = -255.5
+margin_right = 204.0
+margin_bottom = 255.5
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Scroll" type="ScrollContainer" parent="CONTROL"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = SubResource( 24 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="HboxButtons" type="HBoxContainer" parent="CONTROL/Scroll"]
+margin_right = 1232.0
+margin_bottom = 511.0
+alignment = 1
+
+[node name="Button1" type="TextureButton" parent="CONTROL/Scroll/HboxButtons"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_right = 408.0
+margin_bottom = 511.0
+mouse_filter = 2
+texture_normal = ExtResource( 7 )
+texture_disabled = ExtResource( 8 )
+texture_focused = ExtResource( 9 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Text" type="Label" parent="CONTROL/Scroll/HboxButtons/Button1"]
+anchor_right = 1.0
+margin_top = 39.0
+margin_bottom = 57.0
+custom_fonts/font = SubResource( 3 )
+align = 1
+valign = 1
+clip_text = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Button2" type="TextureButton" parent="CONTROL/Scroll/HboxButtons"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 412.0
+margin_right = 820.0
+margin_bottom = 511.0
+mouse_filter = 2
+texture_normal = ExtResource( 7 )
+texture_disabled = ExtResource( 8 )
+texture_focused = ExtResource( 9 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Text" type="Label" parent="CONTROL/Scroll/HboxButtons/Button2"]
+anchor_right = 1.0
+margin_top = 39.0
+margin_bottom = 57.0
+custom_fonts/font = SubResource( 3 )
+align = 1
+valign = 1
+clip_text = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Button3" type="TextureButton" parent="CONTROL/Scroll/HboxButtons"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 824.0
+margin_right = 1232.0
+margin_bottom = 511.0
+mouse_filter = 2
+texture_normal = ExtResource( 7 )
+texture_disabled = ExtResource( 8 )
+texture_focused = ExtResource( 9 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Text" type="Label" parent="CONTROL/Scroll/HboxButtons/Button3"]
+anchor_right = 1.0
+margin_top = 39.0
+margin_bottom = 57.0
+custom_fonts/font = SubResource( 3 )
+align = 1
+valign = 1
+clip_text = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Animacion" type="AnimationPlayer" parent="."]
+autoplay = "Appear"
+anims/Appear = SubResource( 1 )
+
+[node name="FOCUS" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+
+[node name="PRESS" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+
+[connection signal="focus_entered" from="CONTROL/Scroll/HboxButtons/Button1" to="." method="_on_Button1_focus_entered"]
+[connection signal="pressed" from="CONTROL/Scroll/HboxButtons/Button1" to="." method="_on_Button1_pressed"]
+[connection signal="focus_entered" from="CONTROL/Scroll/HboxButtons/Button2" to="." method="_on_Button1_focus_entered"]
+[connection signal="pressed" from="CONTROL/Scroll/HboxButtons/Button2" to="." method="_on_Button1_pressed"]
+[connection signal="focus_entered" from="CONTROL/Scroll/HboxButtons/Button3" to="." method="_on_Button1_focus_entered"]
+[connection signal="pressed" from="CONTROL/Scroll/HboxButtons/Button3" to="." method="_on_Button1_pressed"]

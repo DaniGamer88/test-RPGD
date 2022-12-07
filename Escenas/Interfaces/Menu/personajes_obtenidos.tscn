@@ -1,0 +1,289 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://Main Resources/Sprites/Interfaz/Menu/23 sin título_20220604163414.png" type="Texture" id=1]
+[ext_resource path="res://Main Resources/Sprites/Interfaz/Menu/4 sin título_20220522133307.png" type="Texture" id=2]
+[ext_resource path="res://Main Resources/Fuentes/PixelatedPusab.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Escenas/Interfaces/Menu/personajes_obtenidos.gd" type="Script" id=4]
+[ext_resource path="res://Main Resources/Fuentes/OXYGENE1.TTF" type="DynamicFontData" id=5]
+[ext_resource path="res://Main Resources/Sprites/otros/progress_bars/47 sin título_20220701105221.png" type="Texture" id=6]
+[ext_resource path="res://Main Resources/Sprites/Interfaz/Opciones/30 sin título_20220612113849.png" type="Texture" id=7]
+[ext_resource path="res://Main Resources/Sprites/Interfaz/SaveScreen/5 sin título_20220522143403.png" type="Texture" id=8]
+[ext_resource path="res://Main Resources/Sprites/otros/progress_bars/47 sin título_20220701110147.png" type="Texture" id=9]
+[ext_resource path="res://Main Resources/Fuentes/PKMN RBYGSC.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://Main Resources/Sprites/Interfaz/SaveScreen/104 sin título_20220330205747.png" type="Texture" id=11]
+[ext_resource path="res://Main Resources/Fuentes/rainyhearts.ttf" type="DynamicFontData" id=12]
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+outline_size = 3
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 25
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=9]
+font_data = ExtResource( 12 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 15
+font_data = ExtResource( 10 )
+
+[sub_resource type="StyleBoxTexture" id=8]
+texture = ExtResource( 11 )
+region_rect = Rect2( 0, 0, 408, 511 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "press"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3 ),
+"transitions": PoolRealArray( 0.435275, 0.435275, 0.435275 ),
+"update": 0,
+"values": [ Vector2( 16, 243.5 ), Vector2( 0, 227.5 ), Vector2( 16, 243.5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect_size")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3 ),
+"transitions": PoolRealArray( 0.435275, 0.435275, 0.435275 ),
+"update": 0,
+"values": [ Vector2( 76, 113 ), Vector2( 97, 144 ), Vector2( 76, 113 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "press"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3 ),
+"transitions": PoolRealArray( 0.435275, 0.435275, 0.435275 ),
+"update": 0,
+"values": [ Vector2( 934, 243 ), Vector2( 925, 227.5 ), Vector2( 934, 243.5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect_size")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3 ),
+"transitions": PoolRealArray( 0.435275, 0.435275, 0.435275 ),
+"update": 0,
+"values": [ Vector2( 76, 113 ), Vector2( 97, 144 ), Vector2( 76, 113 ) ]
+}
+
+[node name="personajes_obtenidos" type="CanvasLayer"]
+script = ExtResource( 4 )
+
+[node name="background" type="TextureRect" parent="."]
+self_modulate = Color( 0, 0.0392157, 1, 1 )
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="deco" type="TextureRect" parent="background"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 2 )
+flip_v = true
+
+[node name="tittle" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -212.0
+margin_top = 24.0
+margin_right = 212.0
+margin_bottom = 75.0001
+custom_colors/font_color = Color( 1, 0.992157, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 3
+custom_constants/shadow_offset_y = -3
+custom_constants/shadow_as_outline = 87
+custom_fonts/font = SubResource( 2 )
+text = "CHARACTERS"
+align = 1
+valign = 1
+
+[node name="wea" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -4.0
+margin_top = -521.0
+margin_right = 404.0
+margin_bottom = -8.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="window" type="TextureRect" parent="wea"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -204.0
+margin_top = -255.5
+margin_right = 204.0
+margin_bottom = 255.5
+texture = ExtResource( 8 )
+
+[node name="Scroll" type="ScrollContainer" parent="wea"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+follow_focus = true
+scroll_vertical_enabled = false
+
+[node name="box_buttons" type="HBoxContainer" parent="wea/Scroll"]
+margin_right = 408.0
+margin_bottom = 511.0
+
+[node name="character_1" type="TextureButton" parent="wea/Scroll/box_buttons"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_right = 408.0
+margin_bottom = 511.0
+texture_normal = ExtResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="tittle" type="Label" parent="wea/Scroll/box_buttons/character_1"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -140.0
+margin_top = 16.0
+margin_right = 140.0
+margin_bottom = 42.0
+custom_fonts/font = SubResource( 1 )
+text = "dani"
+align = 1
+valign = 1
+clip_text = true
+
+[node name="velocidad" type="TextureProgress" parent="wea/Scroll/box_buttons/character_1"]
+margin_left = 56.0
+margin_top = 88.0
+margin_right = 121.0
+margin_bottom = 153.0
+step = 0.01
+value = 16.47
+texture_under = ExtResource( 6 )
+texture_progress = ExtResource( 9 )
+fill_mode = 4
+tint_progress = Color( 0.0156863, 1, 0, 1 )
+
+[node name="porcent" type="Label" parent="wea/Scroll/box_buttons/character_1/velocidad"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -7.0
+margin_right = 20.0
+margin_bottom = 7.0
+custom_fonts/font = SubResource( 9 )
+text = "Velocidad"
+align = 1
+valign = 1
+
+[node name="vida" type="TextureProgress" parent="wea/Scroll/box_buttons/character_1"]
+margin_left = 176.0
+margin_top = 88.0
+margin_right = 241.0
+margin_bottom = 153.0
+step = 0.01
+value = 87.73
+texture_under = ExtResource( 6 )
+texture_progress = ExtResource( 9 )
+fill_mode = 4
+tint_progress = Color( 1, 0, 0, 1 )
+radial_fill_degrees = 0.0
+
+[node name="fuerza" type="TextureProgress" parent="wea/Scroll/box_buttons/character_1"]
+margin_left = 288.0
+margin_top = 88.0
+margin_right = 353.0
+margin_bottom = 153.0
+step = 0.01
+value = 87.73
+texture_under = ExtResource( 6 )
+texture_progress = ExtResource( 9 )
+fill_mode = 4
+tint_progress = Color( 0.996078, 1, 0, 1 )
+radial_fill_degrees = 0.0
+
+[node name="tittle2" type="Label" parent="wea/Scroll/box_buttons/character_1"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -140.0
+margin_top = 213.0
+margin_right = 140.0
+margin_bottom = 239.0
+custom_fonts/font = SubResource( 1 )
+text = "Informacion"
+align = 1
+valign = 1
+clip_text = true
+
+[node name="info" type="RichTextLabel" parent="wea/Scroll/box_buttons/character_1"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -185.0
+margin_top = -19.5
+margin_right = 185.0
+margin_bottom = 195.5
+custom_fonts/normal_font = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
+scroll_active = false
+
+[node name="flecha_izq" type="TextureRect" parent="."]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 16.0
+margin_top = -56.5
+margin_right = 92.0
+margin_bottom = 56.5
+texture = ExtResource( 7 )
+expand = true
+
+[node name="anim" type="AnimationPlayer" parent="flecha_izq"]
+anims/press = SubResource( 4 )
+
+[node name="flecha_der" type="TextureRect" parent="."]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 934.0
+margin_top = -57.0
+margin_right = 1010.0
+margin_bottom = 56.0
+texture = ExtResource( 7 )
+expand = true
+flip_h = true
+
+[node name="anim" type="AnimationPlayer" parent="flecha_der"]
+anims/press = SubResource( 6 )

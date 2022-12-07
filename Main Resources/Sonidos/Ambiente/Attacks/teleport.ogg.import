@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/teleport.ogg-9920aeb89b282703746d5df8a9175e2b.oggstr"
+
+[deps]
+
+source_file="res://Main Resources/Sonidos/Ambiente/Attacks/teleport.ogg"
+dest_files=[ "res://.import/teleport.ogg-9920aeb89b282703746d5df8a9175e2b.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

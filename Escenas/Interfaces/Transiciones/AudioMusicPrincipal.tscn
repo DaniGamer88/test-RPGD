@@ -1,0 +1,91 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Escenas/Interfaces/Transiciones/AudioMusicPrincipal.gd" type="Script" id=1]
+[ext_resource path="res://Main Resources/Fuentes/PixelatedPusab.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Main Resources/Sprites/otros/59 sin título_20220709222605.png" type="Texture" id=3]
+
+[sub_resource type="Animation" id=2]
+resource_name = "transicion"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.6, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -80.0, -80.0, 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[sub_resource type="DynamicFont" id=3]
+size = 25
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=5]
+resource_name = "appear"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("text:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 1.7, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="AudioMusicPrincipal" type="AudioStreamPlayer"]
+pause_mode = 2
+script = ExtResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/transicion = SubResource( 2 )
+
+[node name="text" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="text" type="Label" parent="text"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -968.0
+margin_top = -294.0
+margin_right = -264.0
+margin_bottom = -257.0
+custom_fonts/font = SubResource( 3 )
+text = "musica afnsdgg / Waterflame"
+valign = 1
+
+[node name="ico" type="TextureRect" parent="text/text"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = -48.0
+margin_top = -20.0
+margin_right = -8.0
+margin_bottom = 20.0
+texture = ExtResource( 3 )
+
+[node name="anim" type="AnimationPlayer" parent="text/text"]
+root_node = NodePath("../..")
+anims/appear = SubResource( 5 )

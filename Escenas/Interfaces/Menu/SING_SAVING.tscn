@@ -1,0 +1,189 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Main Resources/Sprites/Interfaz/Menu/46 sin título_20220702113824.png" type="Texture" id=1]
+[ext_resource path="res://Main Resources/Sprites/Interfaz/Menu/47 sin título_20220702115401.png" type="Texture" id=2]
+[ext_resource path="res://Main Resources/Sprites/otros/progress_bars/47 sin título_20220701105221.png" type="Texture" id=3]
+[ext_resource path="res://Escenas/Interfaces/Menu/SING_SAVING.gd" type="Script" id=4]
+
+[sub_resource type="Shader" id=8]
+code = "shader_type canvas_item;
+
+uniform int pixelSize = 4;
+
+void fragment()
+{
+	
+	ivec2 size = textureSize(TEXTURE, 0);
+	
+	int xRes = size.x;
+	int yRes = size.y;
+	
+	float xFactor = float(xRes) / float(pixelSize);
+	float yFactor = float(yRes) / float(pixelSize);
+	
+	float grid_uv_x = round(UV.x * xFactor) / xFactor;
+	float grid_uv_y = round(UV.y * yFactor) / yFactor;
+	
+	vec4 text = texture(TEXTURE, vec2(grid_uv_x, grid_uv_y));
+	
+	COLOR = text;
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 8 )
+shader_param/pixelSize = 2
+
+[sub_resource type="Animation" id=14]
+resource_name = "up"
+length = 0.29
+step = 0.002
+tracks/0/type = "value"
+tracks/0/path = NodePath("ico:rect_position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.29 ),
+"transitions": PoolRealArray( 0.148651, 0.148651 ),
+"update": 0,
+"values": [ Vector2( -0.000183105, 0.000152588 ), Vector2( -0.000183105, -87.9998 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("rueda2:rect_position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.29 ),
+"transitions": PoolRealArray( 0.148651, 0.148651 ),
+"update": 0,
+"values": [ Vector2( -6.00018, -5.99985 ), Vector2( -6.00018, -93.9998 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("rueda:rect_position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.29 ),
+"transitions": PoolRealArray( 0.148651, 0.148651 ),
+"update": 0,
+"values": [ Vector2( -3.00018, -3.49985 ), Vector2( -3.00018, -91.4998 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 360.0 ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "scroll"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 360.0 ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "save"
+length = 1.41
+step = 0.002
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.296, 1.082, 1.406 ),
+"transitions": PoolRealArray( 0.406126, 0.000166752, 0.277393, 0.406126 ),
+"update": 0,
+"values": [ Vector2( 1036, 532 ), Vector2( 956, 532 ), Vector2( 956, 532 ), Vector2( 1036, 532 ) ]
+}
+
+[node name="SING_SAVING" type="CanvasLayer"]
+layer = 100
+script = ExtResource( 4 )
+
+[node name="sign_save" type="Control" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 12.0
+margin_top = -68.0
+margin_right = 71.9999
+margin_bottom = -7.99969
+
+[node name="ico" type="TextureRect" parent="sign_save"]
+material = SubResource( 2 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -30.0
+margin_top = -30.0
+margin_right = 30.0
+margin_bottom = 30.0
+texture = ExtResource( 1 )
+
+[node name="anim_up" type="AnimationPlayer" parent="sign_save/ico"]
+root_node = NodePath("../..")
+anims/up = SubResource( 14 )
+
+[node name="rueda2" type="TextureRect" parent="sign_save"]
+material = SubResource( 2 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -36.0
+margin_top = -36.0
+margin_right = 36.0
+margin_bottom = 36.0
+texture = ExtResource( 3 )
+expand = true
+
+[node name="rueda" type="TextureRect" parent="sign_save"]
+material = SubResource( 2 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -33.0
+margin_top = -33.5
+margin_right = 33.0
+margin_bottom = 33.5
+rect_rotation = 360.0
+rect_pivot_offset = Vector2( 33, 33 )
+texture = ExtResource( 2 )
+expand = true
+
+[node name="anim" type="AnimationPlayer" parent="sign_save/rueda"]
+autoplay = "scroll"
+anims/RESET = SubResource( 9 )
+anims/scroll = SubResource( 10 )
+
+[node name="anim" type="AnimationPlayer" parent="sign_save"]
+anims/save = SubResource( 12 )

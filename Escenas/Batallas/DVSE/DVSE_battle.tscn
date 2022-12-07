@@ -1,0 +1,156 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Escenas/MapasRecursos/363 sin título_20211221141951.png" type="Texture" id=1]
+[ext_resource path="res://Escenas/MapasRecursos/362 sin título_20211221141821.png" type="Texture" id=2]
+[ext_resource path="res://Escenas/Player/jugador.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Escenas/Interfaces/BattleInterface/PlayerInterface.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Escenas/Batallas/DVSE/DVSE_battle.gd" type="Script" id=5]
+[ext_resource path="res://Escenas/NPCS/NPCExb.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Escenas/MapasRecursos/367 sin título_20211221194802.png" type="Texture" id=8]
+[ext_resource path="res://Escenas/MapasRecursos/365 sin título_20211221142838.png" type="Texture" id=9]
+[ext_resource path="res://Escenas/MapasRecursos/100 sin título_20220303195249.png" type="Texture" id=10]
+[ext_resource path="res://Escenas/MapasRecursos/100 sin título_20220303194915.png" type="Texture" id=11]
+[ext_resource path="res://Escenas/Interfaces/BattleInterface/EnemySelect.tscn" type="PackedScene" id=12]
+
+[sub_resource type="Animation" id=19]
+resource_name = "temblor_1"
+length = 0.4
+step = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.016, 0.041, 0.076, 0.111, 0.147, 0.192, 0.232 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 512, 300 ), Vector2( 496, 284 ), Vector2( 528, 276 ), Vector2( 488, 316 ), Vector2( 512, 300 ), Vector2( 528, 276 ), Vector2( 488, 316 ), Vector2( 512, 300 ) ]
+}
+
+[sub_resource type="Shader" id=15]
+code = "shader_type canvas_item;
+
+
+uniform float speed;
+
+
+void fragment () {
+	COLOR = texture(TEXTURE, vec2(UV.x + TIME * speed, UV.y));
+}"
+
+[sub_resource type="ShaderMaterial" id=16]
+shader = SubResource( 15 )
+shader_param/speed = 0.08
+
+[sub_resource type="Shader" id=13]
+code = "shader_type canvas_item;
+
+
+uniform float speed;
+
+
+void fragment () {
+	COLOR = texture(TEXTURE, vec2(UV.x + TIME * speed, UV.y));
+}"
+
+[sub_resource type="ShaderMaterial" id=17]
+shader = SubResource( 13 )
+shader_param/speed = 0.09
+
+[node name="DVSE_battle" type="Node"]
+script = ExtResource( 5 )
+
+[node name="Suelo" type="Sprite" parent="."]
+position = Vector2( -791, 0 )
+scale = Vector2( 3.03516, 1.14 )
+texture = ExtResource( 2 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="jugador" parent="." instance=ExtResource( 3 )]
+
+[node name="PlayerInterface" parent="jugador" instance=ExtResource( 4 )]
+position = Vector2( 0, 0 )
+
+[node name="NPCExb" parent="." groups=["BOSS", "ENEMY"] instance=ExtResource( 6 )]
+
+[node name="EnemySelect" parent="." instance=ExtResource( 12 )]
+
+[node name="Camara" type="Camera2D" parent="."]
+position = Vector2( 512, 300 )
+current = true
+smoothing_enabled = true
+smoothing_speed = 15.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="animationCam" type="AnimationPlayer" parent="Camara"]
+anims/temblor_1 = SubResource( 19 )
+
+[node name="background" type="ParallaxBackground" parent="Camara"]
+layer = -1
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Camara/background"]
+motion_scale = Vector2( 0.21, 1 )
+motion_mirroring = Vector2( 3000, 0 )
+
+[node name="Cielo" type="Sprite" parent="Camara/background/ParallaxLayer"]
+position = Vector2( -799, -62 )
+scale = Vector2( 4.50879, 1.84667 )
+texture = ExtResource( 1 )
+centered = false
+flip_v = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sol" type="Sprite" parent="Camara/background/ParallaxLayer"]
+position = Vector2( 568, 83 )
+scale = Vector2( 0.173177, 0.173177 )
+texture = ExtResource( 9 )
+
+[node name="pir_fondo" type="ParallaxLayer" parent="Camara/background"]
+motion_scale = Vector2( 0.22, 1 )
+
+[node name="piramide" type="Sprite" parent="Camara/background/pir_fondo"]
+position = Vector2( 424, 16 )
+texture = ExtResource( 10 )
+
+[node name="parallax_piso_fondo" type="ParallaxLayer" parent="Camara/background"]
+motion_scale = Vector2( 0.25, 1 )
+
+[node name="fondo" type="Sprite" parent="Camara/background/parallax_piso_fondo"]
+position = Vector2( 798, 176 )
+scale = Vector2( 2.80859, 1 )
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ParallaxPolvo" type="ParallaxBackground" parent="."]
+layer = 0
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxPolvo"]
+motion_scale = Vector2( 1.5, 1 )
+motion_mirroring = Vector2( 1024, 0 )
+
+[node name="polvo" type="Sprite" parent="ParallaxPolvo/ParallaxLayer"]
+modulate = Color( 1, 1, 1, 0.172549 )
+material = SubResource( 16 )
+position = Vector2( 512, 304 )
+texture = ExtResource( 8 )
+
+[node name="polvo2" type="Sprite" parent="ParallaxPolvo/ParallaxLayer"]
+modulate = Color( 1, 1, 1, 0.196078 )
+material = SubResource( 17 )
+position = Vector2( 663.893, 281 )
+scale = Vector2( 1.29667, 1.29667 )
+texture = ExtResource( 8 )
+flip_v = true
+
+[connection signal="final_1" from="NPCExb" to="." method="_on_NPCExb_final_1"]

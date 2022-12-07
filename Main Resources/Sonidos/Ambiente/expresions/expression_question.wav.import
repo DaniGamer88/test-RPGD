@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/expression_question.wav-42efb5242ff5aa26d60f30328b7f665d.sample"
+
+[deps]
+
+source_file="res://Main Resources/Sonidos/Ambiente/expresions/expression_question.wav"
+dest_files=[ "res://.import/expression_question.wav-42efb5242ff5aa26d60f30328b7f665d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

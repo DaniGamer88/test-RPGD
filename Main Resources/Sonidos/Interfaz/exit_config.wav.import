@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/exit_config.wav-e7131b123a922e58043e4c3ecba83f09.sample"
+
+[deps]
+
+source_file="res://Main Resources/Sonidos/Interfaz/exit_config.wav"
+dest_files=[ "res://.import/exit_config.wav-e7131b123a922e58043e4c3ecba83f09.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

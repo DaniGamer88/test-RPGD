@@ -1,0 +1,351 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Main Resources/Sprites/Interfaz/Opciones/35 sin título_20220619004542.png" type="Texture" id=1]
+[ext_resource path="res://Escenas/Interfaces/PopUPS/opciones/pop_up_options_volume.gd" type="Script" id=2]
+[ext_resource path="res://Main Resources/Sprites/otros/progress_bars/48 sin título_20220702110747.png" type="Texture" id=3]
+[ext_resource path="res://Main Resources/Sprites/otros/progress_bars/48 sin título_20220702111102.png" type="Texture" id=4]
+[ext_resource path="res://Main Resources/Fuentes/PixelatedPusab.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Main Resources/Fuentes/rainyhearts.ttf" type="DynamicFontData" id=6]
+
+[sub_resource type="DynamicFont" id=122]
+size = 20
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=132]
+size = 18
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxEmpty" id=133]
+
+[sub_resource type="StyleBoxEmpty" id=134]
+
+[sub_resource type="StyleBoxTexture" id=124]
+
+[sub_resource type="Animation" id=129]
+resource_name = "focus"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 0.31864, 0.258816 ),
+"update": 0,
+"values": [ Vector2( 102, 82 ), Vector2( 102, 74 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../bgm_bar/porcent:modulate")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=131]
+resource_name = "focus"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 0.366021, 0.258816 ),
+"update": 0,
+"values": [ Vector2( 102, 154 ), Vector2( 102, 146 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../sfx_bar/porcent:modulate")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "appear"
+length = 0.2
+step = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("../background:color")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 0.329877 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 0.509804 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("tittle:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.194, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, false, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("..:X")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.19, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, false, true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("window:rect_position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 0.366021, 0.0507658 ),
+"update": 0,
+"values": [ Vector2( 194, 119 ), Vector2( 3.05176e-05, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("window:rect_size")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 0.366021, 0.0507658 ),
+"update": 0,
+"values": [ Vector2( 20, 12 ), Vector2( 408, 250 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("bgm:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("sfx:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("bgm_bar:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("sfx_bar:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[node name="pop_up_options_volume" type="CanvasLayer"]
+layer = 6
+script = ExtResource( 2 )
+X = true
+
+[node name="background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.509804 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="option" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -204.0
+margin_top = -125.0
+margin_right = 204.0
+margin_bottom = 125.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="window" type="TextureRect" parent="option"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -204.0
+margin_top = -125.0
+margin_right = 204.0
+margin_bottom = 125.0
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="tittle" type="Label" parent="option"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -102.0
+margin_top = 16.0
+margin_right = 101.0
+margin_bottom = 36.0
+custom_fonts/font = SubResource( 122 )
+text = "Volumen"
+align = 1
+valign = 1
+
+[node name="bgm_bar" type="TextureProgress" parent="option"]
+margin_left = 54.0
+margin_top = 106.0
+margin_right = 350.0
+margin_bottom = 122.0
+min_value = -80.0
+max_value = 0.0
+step = 0.001
+texture_under = ExtResource( 3 )
+texture_progress = ExtResource( 4 )
+
+[node name="porcent" type="ProgressBar" parent="option/bgm_bar"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 116.0
+margin_top = -16.0
+margin_right = 183.0
+margin_bottom = -2.0
+custom_fonts/font = SubResource( 132 )
+custom_styles/fg = SubResource( 133 )
+custom_styles/bg = SubResource( 134 )
+min_value = -80.0
+max_value = 0.0
+
+[node name="bgm" type="Button" parent="option"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -102.0
+margin_top = 82.0
+margin_right = 101.0
+margin_bottom = 102.0
+custom_colors/font_color_disabled = Color( 0.403922, 0.403922, 0.403922, 1 )
+custom_colors/font_color_focus = Color( 0, 1, 0.984314, 1 )
+custom_colors/font_color = Color( 0.933333, 1, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 1, 0.984314, 1 )
+custom_colors/font_color_pressed = Color( 0, 1, 0.984314, 1 )
+custom_fonts/font = SubResource( 122 )
+custom_styles/hover = SubResource( 124 )
+custom_styles/pressed = SubResource( 124 )
+custom_styles/focus = SubResource( 124 )
+custom_styles/disabled = SubResource( 124 )
+custom_styles/normal = SubResource( 124 )
+text = "BGM"
+
+[node name="anim_foc" type="AnimationPlayer" parent="option/bgm"]
+anims/focus = SubResource( 129 )
+
+[node name="sfx_bar" type="TextureProgress" parent="option"]
+margin_left = 54.0
+margin_top = 178.0
+margin_right = 350.0
+margin_bottom = 194.0
+min_value = -80.0
+max_value = 0.0
+step = 0.001
+texture_under = ExtResource( 3 )
+texture_progress = ExtResource( 4 )
+
+[node name="porcent" type="ProgressBar" parent="option/sfx_bar"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 116.0
+margin_top = -16.0
+margin_right = 183.0
+margin_bottom = -2.0
+custom_fonts/font = SubResource( 132 )
+custom_styles/fg = SubResource( 133 )
+custom_styles/bg = SubResource( 134 )
+min_value = -80.0
+max_value = 0.0
+
+[node name="sfx" type="Button" parent="option"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -102.0
+margin_top = 154.0
+margin_right = 101.0
+margin_bottom = 174.0
+custom_colors/font_color_disabled = Color( 0.403922, 0.403922, 0.403922, 1 )
+custom_colors/font_color_focus = Color( 0, 1, 0.984314, 1 )
+custom_colors/font_color = Color( 0.933333, 1, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 1, 0.984314, 1 )
+custom_colors/font_color_pressed = Color( 0, 1, 0.984314, 1 )
+custom_fonts/font = SubResource( 122 )
+custom_styles/hover = SubResource( 124 )
+custom_styles/pressed = SubResource( 124 )
+custom_styles/focus = SubResource( 124 )
+custom_styles/disabled = SubResource( 124 )
+custom_styles/normal = SubResource( 124 )
+text = "SFX"
+
+[node name="anim_foc" type="AnimationPlayer" parent="option/sfx"]
+anims/focus = SubResource( 131 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="option"]
+autoplay = "appear"
+anims/appear = SubResource( 2 )
+
+[connection signal="focus_entered" from="option/bgm" to="." method="_on_bgm_focus_entered"]
+[connection signal="focus_exited" from="option/bgm" to="." method="_on_bgm_focus_exited"]
+[connection signal="pressed" from="option/bgm" to="." method="_on_bgm_pressed"]
+[connection signal="focus_entered" from="option/sfx" to="." method="_on_sfx_focus_entered"]
+[connection signal="focus_exited" from="option/sfx" to="." method="_on_sfx_focus_exited"]
+[connection signal="pressed" from="option/sfx" to="." method="_on_sfx_pressed"]

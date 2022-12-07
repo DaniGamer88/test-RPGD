@@ -1,0 +1,365 @@
+[gd_scene load_steps=29 format=2]
+
+[ext_resource path="res://Main Resources/Sprites/Interfaz/Opciones/3_sin_titulo_20220805202652.png" type="Texture" id=1]
+[ext_resource path="res://Main Resources/Sprites/Interfaz/Objects/ico_free_png.png" type="Texture" id=2]
+[ext_resource path="res://Escenas/Interfaces/Pausa/objects_window.gd" type="Script" id=3]
+[ext_resource path="res://Main Resources/Sprites/Interfaz/Opciones/3_sin_titulo_20220805202504.png" type="Texture" id=4]
+[ext_resource path="res://Main Resources/Sprites/Interfaz/Opciones/17 sin título_20220604140749.png" type="Texture" id=5]
+[ext_resource path="res://Main Resources/Sprites/Interfaz/Menu/14 sin título_20220603120738.png" type="Texture" id=7]
+[ext_resource path="res://Main Resources/Sprites/Interfaz/Menu/16 sin título_20220603214524.png" type="Texture" id=9]
+[ext_resource path="res://Main Resources/Sprites/Interfaz/Menu/17 sin título_20220603221638.png" type="Texture" id=10]
+[ext_resource path="res://Main Resources/Fuentes/PKMN RBYGSC.ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://Main Resources/Fuentes/PixelatedPusab.ttf" type="DynamicFontData" id=12]
+[ext_resource path="res://Main Resources/Sprites/Interfaz/Opciones/17 sin título_20220604140759.png" type="Texture" id=19]
+[ext_resource path="res://Main Resources/Sprites/Interfaz/Opciones/17 sin título_20220604140806.png" type="Texture" id=20]
+
+[sub_resource type="Shader" id=106]
+code = "shader_type canvas_item;
+
+uniform vec4 color : hint_color = vec4(1.0);
+uniform float width : hint_range(0, 10) = 1.0;
+uniform int pattern : hint_range(0, 2) = 0; // diamond, circle, square
+uniform bool inside = false;
+uniform bool add_margins = true; // only useful when inside is false
+
+void vertex() {
+	if (add_margins) {
+		VERTEX += (UV * 2.0 - 1.0) * width;
+	}
+}
+
+bool hasContraryNeighbour(vec2 uv, vec2 texture_pixel_size, sampler2D texture) {
+	for (float i = -ceil(width); i <= ceil(width); i++) {
+		float x = abs(i) > width ? width * sign(i) : i;
+		float offset;
+		
+		if (pattern == 0) {
+			offset = width - abs(x);
+		} else if (pattern == 1) {
+			offset = floor(sqrt(pow(width + 0.5, 2) - x * x));
+		} else if (pattern == 2) {
+			offset = width;
+		}
+		
+		for (float j = -ceil(offset); j <= ceil(offset); j++) {
+			float y = abs(j) > offset ? offset * sign(j) : j;
+			vec2 xy = uv + texture_pixel_size * vec2(x, y);
+			
+			if ((xy != clamp(xy, vec2(0.0), vec2(1.0)) || texture(texture, xy).a == 0.0) == inside) {
+				return true;
+			}
+		}
+	}
+	
+	return false;
+}
+
+void fragment() {
+	vec2 uv = UV;
+	
+	if (add_margins) {
+		vec2 texture_pixel_size = vec2(1.0) / (vec2(1.0) / TEXTURE_PIXEL_SIZE + vec2(width * 2.0));
+		
+		uv = (uv - texture_pixel_size * width) * TEXTURE_PIXEL_SIZE / texture_pixel_size;
+		
+		if (uv != clamp(uv, vec2(0.0), vec2(1.0))) {
+			COLOR.a = 0.0;
+		} else {
+			COLOR = texture(TEXTURE, uv);
+		}
+	} else {
+		COLOR = texture(TEXTURE, uv);
+	}
+	
+	if ((COLOR.a > 0.0) == inside && hasContraryNeighbour(uv, TEXTURE_PIXEL_SIZE, TEXTURE)) {
+		COLOR.rgb = inside ? mix(COLOR.rgb, color.rgb, color.a) : color.rgb;
+		COLOR.a += (1.0 - COLOR.a) * color.a;
+	}
+}"
+
+[sub_resource type="ShaderMaterial" id=87]
+shader = SubResource( 106 )
+shader_param/color = Color( 1, 1, 1, 1 )
+shader_param/width = 2.539
+shader_param/pattern = 2
+shader_param/inside = false
+shader_param/add_margins = true
+
+[sub_resource type="DynamicFont" id=88]
+size = 40
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 12 )
+
+[sub_resource type="StyleBoxTexture" id=107]
+
+[sub_resource type="StyleBoxTexture" id=108]
+
+[sub_resource type="StyleBoxTexture" id=109]
+
+[sub_resource type="StyleBoxTexture" id=110]
+
+[sub_resource type="StyleBoxTexture" id=111]
+
+[sub_resource type="StyleBoxTexture" id=112]
+
+[sub_resource type="Theme" id=24]
+HScrollBar/styles/grabber = SubResource( 107 )
+HScrollBar/styles/grabber_highlight = SubResource( 107 )
+HScrollBar/styles/grabber_pressed = SubResource( 107 )
+HScrollBar/styles/scroll = SubResource( 107 )
+HScrollBar/styles/scroll_focus = SubResource( 108 )
+VScrollBar/styles/grabber = SubResource( 107 )
+VScrollBar/styles/grabber_highlight = SubResource( 109 )
+VScrollBar/styles/grabber_pressed = SubResource( 110 )
+VScrollBar/styles/scroll = SubResource( 111 )
+VScrollBar/styles/scroll_focus = SubResource( 112 )
+
+[sub_resource type="AnimatedTexture" id=104]
+flags = 4
+frames = 4
+fps = 2.0
+frame_0/texture = ExtResource( 5 )
+frame_1/texture = ExtResource( 19 )
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource( 20 )
+frame_2/delay_sec = 0.0
+frame_3/texture = ExtResource( 19 )
+frame_3/delay_sec = 0.0
+
+[sub_resource type="DynamicFont" id=89]
+size = 32
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 12 )
+
+[sub_resource type="DynamicFont" id=90]
+font_data = ExtResource( 11 )
+
+[sub_resource type="SpriteFrames" id=113]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "bloq",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "desb",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=116]
+resource_name = "press"
+length = 0.2
+step = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 576, 80 ), Vector2( 576, 80 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.067, 0.2 ),
+"transitions": PoolRealArray( 0.466517, 0.112657, 0.378929 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.338, 1.338 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=79]
+resource_name = "appear"
+length = 0.3
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("options:rect_position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 0.517632, 1.03527 ),
+"update": 0,
+"values": [ Vector2( 109.5, -523.5 ), Vector2( 109.5, 44.5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:X")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.22, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, false, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("black:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="objects_window" type="CanvasLayer"]
+pause_mode = 2
+layer = 5
+script = ExtResource( 3 )
+
+[node name="black" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.501961 )
+
+[node name="options" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -402.5
+margin_top = -255.5
+margin_right = 402.5
+margin_bottom = 255.5
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Window" type="TextureRect" parent="options"]
+material = SubResource( 87 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -392.0
+margin_top = -256.5
+margin_right = 392.0
+margin_bottom = 256.5
+texture = ExtResource( 7 )
+expand = true
+
+[node name="tittle" type="Label" parent="options"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -112.0
+margin_top = 23.0
+margin_right = 113.0
+margin_bottom = 69.0
+custom_fonts/font = SubResource( 88 )
+text = "Objetos"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BttnsScroll" type="ScrollContainer" parent="options"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 86.0
+margin_top = 73.0
+margin_right = -82.0
+margin_bottom = -51.0
+theme = SubResource( 24 )
+follow_focus = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="container" type="VBoxContainer" parent="options/BttnsScroll"]
+margin_right = 637.0
+margin_bottom = 143.0
+custom_constants/separation = 1
+
+[node name="obj_1" type="TextureButton" parent="options/BttnsScroll/container"]
+margin_right = 637.0
+margin_bottom = 143.0
+mouse_filter = 2
+texture_normal = ExtResource( 10 )
+texture_focused = SubResource( 104 )
+
+[node name="tittle" type="Label" parent="options/BttnsScroll/container/obj_1"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -172.0
+margin_top = -55.0
+margin_right = -50.0
+margin_bottom = -23.0
+custom_colors/font_color = Color( 1, 0.964706, 0, 1 )
+custom_fonts/font = SubResource( 89 )
+text = "COMIDITA :>"
+align = 1
+valign = 1
+
+[node name="info" type="Label" parent="options/BttnsScroll/container/obj_1"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -174.5
+margin_top = -17.5
+margin_right = 190.5
+margin_bottom = 43.5
+custom_fonts/font = SubResource( 90 )
+text = "Presiona para ver mas opciones..."
+autowrap = true
+
+[node name="fondo_ico" type="TextureRect" parent="options/BttnsScroll/container/obj_1"]
+margin_left = 32.0
+margin_top = 35.0
+margin_right = 110.0
+margin_bottom = 113.0
+texture = ExtResource( 2 )
+
+[node name="icono" type="TextureRect" parent="options/BttnsScroll/container/obj_1"]
+margin_left = 32.0
+margin_top = 35.0
+margin_right = 110.0
+margin_bottom = 113.0
+
+[node name="button" type="AnimatedSprite" parent="options/BttnsScroll/container/obj_1"]
+position = Vector2( 576, 80 )
+frames = SubResource( 113 )
+animation = "desb"
+
+[node name="anim" type="AnimationPlayer" parent="options/BttnsScroll/container/obj_1/button"]
+anims/press = SubResource( 116 )
+
+[node name="cadena" type="TextureRect" parent="options"]
+margin_left = 104.0
+margin_top = -113.0
+margin_right = 144.0
+margin_bottom = 16.0
+texture = ExtResource( 9 )
+
+[node name="cadena2" type="TextureRect" parent="options"]
+margin_left = 662.0
+margin_top = -113.0
+margin_right = 702.0
+margin_bottom = 16.0
+texture = ExtResource( 9 )
+
+[node name="animacion" type="AnimationPlayer" parent="."]
+autoplay = "appear"
+anims/appear = SubResource( 79 )
+
+[connection signal="pressed" from="options/BttnsScroll/container/obj_1" to="." method="_on_obj_1_pressed"]

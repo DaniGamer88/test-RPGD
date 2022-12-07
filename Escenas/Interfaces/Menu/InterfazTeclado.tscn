@@ -1,0 +1,1358 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Main Resources/Sprites/Interfaz/SaveScreen/5 sin título_20220522143403.png" type="Texture" id=1]
+[ext_resource path="res://Main Resources/Fuentes/PixelatedPusab.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Main Resources/Sprites/Interfaz/Opciones/27 sin título_20220708111320.png" type="Texture" id=3]
+[ext_resource path="res://Escenas/Interfaces/Menu/InterfazTeclado.gd" type="Script" id=7]
+[ext_resource path="res://Main Resources/Sonidos/Interfaz/Waiting_dialog.wav" type="AudioStream" id=8]
+[ext_resource path="res://Main Resources/Fuentes/IconBitOne.ttf" type="DynamicFontData" id=9]
+
+[sub_resource type="DynamicFont" id=4]
+size = 25
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_char = 3
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 23
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxTexture" id=8]
+
+[sub_resource type="DynamicFont" id=9]
+size = 23
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxTexture" id=10]
+
+[sub_resource type="DynamicFont" id=11]
+font_data = ExtResource( 9 )
+
+[sub_resource type="InputEventAction" id=12]
+action = "ui_select"
+pressed = true
+
+[sub_resource type="ShortCut" id=13]
+shortcut = SubResource( 12 )
+
+[sub_resource type="Animation" id=19]
+resource_name = "focus"
+length = 0.2
+step = 0.02
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_size")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 0.378929, 0.366021 ),
+"update": 0,
+"values": [ Vector2( 96, 52 ), Vector2( 114, 62 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect_position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 0.378929, 0.366021 ),
+"update": 0,
+"values": [ Vector2( 464, 500 ), Vector2( 456, 492 ) ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "appear"
+
+[sub_resource type="Animation" id=16]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("background:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0.541176 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Tittle:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Linetext:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Teclado:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=17]
+resource_name = "appear"
+length = 0.2
+step = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("window:rect_size")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 0.392293, 0.0525566 ),
+"update": 0,
+"values": [ Vector2( 14, 18 ), Vector2( 408, 511 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("window:rect_position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 0.392293, 0.0525566 ),
+"update": 0,
+"values": [ Vector2( 505, 291 ), Vector2( 308, 44 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("background:color")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 0.541176 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Tittle:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Linetext:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Teclado:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[node name="InterfazTeclado" type="CanvasLayer"]
+pause_mode = 1
+layer = 11
+script = ExtResource( 7 )
+
+[node name="background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.541176 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="window" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -204.0
+margin_top = -256.0
+margin_right = 204.0
+margin_bottom = 255.0
+texture = ExtResource( 1 )
+expand = true
+
+[node name="Tittle" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -148.0
+margin_top = 64.0
+margin_right = 148.0
+margin_bottom = 91.0
+custom_colors/font_color = Color( 1, 1, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "aaaa"
+align = 1
+autowrap = true
+
+[node name="Linetext" type="Label" parent="."]
+anchor_left = 0.323242
+anchor_top = 0.173333
+anchor_right = 0.669922
+anchor_bottom = 0.213333
+margin_left = 3.0
+margin_right = 3.0
+custom_fonts/font = SubResource( 5 )
+custom_styles/normal = SubResource( 8 )
+align = 1
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Teclado" type="GridContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -123.0
+margin_top = -161.0
+margin_right = 125.0
+margin_bottom = 182.0
+mouse_filter = 2
+custom_constants/vseparation = 5
+custom_constants/hseparation = 40
+columns = 5
+
+[node name="teclaAmayus" type="Button" parent="Teclado"]
+margin_right = 17.0
+margin_bottom = 24.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0, 0.976471, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "A"
+
+[node name="teclaBmayus" type="Button" parent="Teclado"]
+margin_left = 57.0
+margin_right = 74.0
+margin_bottom = 24.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0, 0.976471, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "B"
+
+[node name="teclaCmayus" type="Button" parent="Teclado"]
+margin_left = 114.0
+margin_right = 133.0
+margin_bottom = 24.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0, 0.976471, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "C"
+
+[node name="teclaDmayus" type="Button" parent="Teclado"]
+margin_left = 173.0
+margin_right = 189.0
+margin_bottom = 24.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0, 0.976471, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "D"
+
+[node name="teclaEmayus" type="Button" parent="Teclado"]
+margin_left = 229.0
+margin_right = 246.0
+margin_bottom = 24.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0, 0.976471, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "E"
+
+[node name="teclaFmayus" type="Button" parent="Teclado"]
+margin_top = 29.0
+margin_right = 17.0
+margin_bottom = 53.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0, 0.976471, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "F"
+
+[node name="teclaGmayus" type="Button" parent="Teclado"]
+margin_left = 57.0
+margin_top = 29.0
+margin_right = 74.0
+margin_bottom = 53.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0, 0.976471, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "G"
+
+[node name="teclaHmayus" type="Button" parent="Teclado"]
+margin_left = 114.0
+margin_top = 29.0
+margin_right = 133.0
+margin_bottom = 53.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0, 0.976471, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "H"
+
+[node name="teclaImayus" type="Button" parent="Teclado"]
+margin_left = 173.0
+margin_top = 29.0
+margin_right = 189.0
+margin_bottom = 53.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0, 0.976471, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "I"
+
+[node name="teclaJmayus" type="Button" parent="Teclado"]
+margin_left = 229.0
+margin_top = 29.0
+margin_right = 246.0
+margin_bottom = 53.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0, 0.976471, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "J"
+
+[node name="teclaKmayus" type="Button" parent="Teclado"]
+margin_top = 58.0
+margin_right = 17.0
+margin_bottom = 82.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0, 0.976471, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "K"
+
+[node name="teclaLmayus" type="Button" parent="Teclado"]
+margin_left = 57.0
+margin_top = 58.0
+margin_right = 74.0
+margin_bottom = 82.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0, 0.976471, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "L"
+
+[node name="teclaMmayus" type="Button" parent="Teclado"]
+margin_left = 114.0
+margin_top = 58.0
+margin_right = 133.0
+margin_bottom = 82.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0, 0.976471, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "M"
+
+[node name="teclaNmayus" type="Button" parent="Teclado"]
+margin_left = 173.0
+margin_top = 58.0
+margin_right = 189.0
+margin_bottom = 82.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0, 0.976471, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "N"
+
+[node name="teclaOmayus" type="Button" parent="Teclado"]
+margin_left = 229.0
+margin_top = 58.0
+margin_right = 246.0
+margin_bottom = 82.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0, 0.976471, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "O"
+
+[node name="teclaPmayus" type="Button" parent="Teclado"]
+margin_top = 87.0
+margin_right = 17.0
+margin_bottom = 111.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0, 0.976471, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "P"
+
+[node name="teclaQmayus" type="Button" parent="Teclado"]
+margin_left = 57.0
+margin_top = 87.0
+margin_right = 74.0
+margin_bottom = 111.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0, 0.976471, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "Q"
+
+[node name="teclaRmayus" type="Button" parent="Teclado"]
+margin_left = 114.0
+margin_top = 87.0
+margin_right = 133.0
+margin_bottom = 111.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0, 0.976471, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "R"
+
+[node name="teclaSmayus" type="Button" parent="Teclado"]
+margin_left = 173.0
+margin_top = 87.0
+margin_right = 189.0
+margin_bottom = 111.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0, 0.976471, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "S"
+
+[node name="teclaTmayus" type="Button" parent="Teclado"]
+margin_left = 229.0
+margin_top = 87.0
+margin_right = 246.0
+margin_bottom = 111.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0, 0.976471, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "T"
+
+[node name="teclaVmayus" type="Button" parent="Teclado"]
+margin_top = 116.0
+margin_right = 17.0
+margin_bottom = 140.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0, 0.976471, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "V"
+
+[node name="teclaXmayus" type="Button" parent="Teclado"]
+margin_left = 57.0
+margin_top = 116.0
+margin_right = 74.0
+margin_bottom = 140.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0, 0.976471, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "X"
+
+[node name="teclaYmayus" type="Button" parent="Teclado"]
+margin_left = 114.0
+margin_top = 116.0
+margin_right = 133.0
+margin_bottom = 140.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0, 0.976471, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "Y"
+
+[node name="teclaZmayus" type="Button" parent="Teclado"]
+margin_left = 173.0
+margin_top = 116.0
+margin_right = 189.0
+margin_bottom = 140.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0, 0.976471, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "Z"
+
+[node name="teclaAminus" type="Button" parent="Teclado"]
+margin_left = 229.0
+margin_top = 116.0
+margin_right = 246.0
+margin_bottom = 140.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0, 0.976471, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "a"
+
+[node name="teclaBminus" type="Button" parent="Teclado"]
+margin_top = 145.0
+margin_right = 17.0
+margin_bottom = 169.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0, 0.976471, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "b"
+
+[node name="teclaCminus" type="Button" parent="Teclado"]
+margin_left = 57.0
+margin_top = 145.0
+margin_right = 74.0
+margin_bottom = 169.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0, 0.976471, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "c"
+
+[node name="teclaDminus" type="Button" parent="Teclado"]
+margin_left = 114.0
+margin_top = 145.0
+margin_right = 133.0
+margin_bottom = 169.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0, 0.976471, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "d"
+
+[node name="teclaEminus" type="Button" parent="Teclado"]
+margin_left = 173.0
+margin_top = 145.0
+margin_right = 189.0
+margin_bottom = 169.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0, 0.976471, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "e"
+
+[node name="teclaFminus" type="Button" parent="Teclado"]
+margin_left = 229.0
+margin_top = 145.0
+margin_right = 246.0
+margin_bottom = 169.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0, 0.976471, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "f"
+
+[node name="teclaGminus" type="Button" parent="Teclado"]
+margin_top = 174.0
+margin_right = 17.0
+margin_bottom = 198.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0, 0.976471, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "g"
+
+[node name="teclaHminus" type="Button" parent="Teclado"]
+margin_left = 57.0
+margin_top = 174.0
+margin_right = 74.0
+margin_bottom = 198.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0, 0.976471, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "h"
+
+[node name="teclaIminus" type="Button" parent="Teclado"]
+margin_left = 114.0
+margin_top = 174.0
+margin_right = 133.0
+margin_bottom = 198.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0, 0.976471, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "i"
+
+[node name="teclaJminus" type="Button" parent="Teclado"]
+margin_left = 173.0
+margin_top = 174.0
+margin_right = 189.0
+margin_bottom = 198.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0, 0.976471, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "j"
+
+[node name="teclaKminus" type="Button" parent="Teclado"]
+margin_left = 229.0
+margin_top = 174.0
+margin_right = 246.0
+margin_bottom = 198.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0, 0.976471, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "k"
+
+[node name="teclaLminus" type="Button" parent="Teclado"]
+margin_top = 203.0
+margin_right = 17.0
+margin_bottom = 227.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0, 0.976471, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "l"
+
+[node name="teclaMminus" type="Button" parent="Teclado"]
+margin_left = 57.0
+margin_top = 203.0
+margin_right = 74.0
+margin_bottom = 227.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0, 0.976471, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "m"
+
+[node name="teclaNminus" type="Button" parent="Teclado"]
+margin_left = 114.0
+margin_top = 203.0
+margin_right = 133.0
+margin_bottom = 227.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0, 0.976471, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "n"
+
+[node name="teclaOminus" type="Button" parent="Teclado"]
+margin_left = 173.0
+margin_top = 203.0
+margin_right = 189.0
+margin_bottom = 227.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0, 0.976471, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "o"
+
+[node name="teclaPminus" type="Button" parent="Teclado"]
+margin_left = 229.0
+margin_top = 203.0
+margin_right = 246.0
+margin_bottom = 227.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0, 0.976471, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "p"
+
+[node name="teclaQminus" type="Button" parent="Teclado"]
+margin_top = 232.0
+margin_right = 17.0
+margin_bottom = 256.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0, 0.976471, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "q"
+
+[node name="teclaRminus" type="Button" parent="Teclado"]
+margin_left = 57.0
+margin_top = 232.0
+margin_right = 74.0
+margin_bottom = 256.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0, 0.976471, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "r"
+
+[node name="teclaSminus" type="Button" parent="Teclado"]
+margin_left = 114.0
+margin_top = 232.0
+margin_right = 133.0
+margin_bottom = 256.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0, 0.976471, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "s"
+
+[node name="teclaTminus" type="Button" parent="Teclado"]
+margin_left = 173.0
+margin_top = 232.0
+margin_right = 189.0
+margin_bottom = 256.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0, 0.976471, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "t"
+
+[node name="teclaVminus" type="Button" parent="Teclado"]
+margin_left = 229.0
+margin_top = 232.0
+margin_right = 246.0
+margin_bottom = 256.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0, 0.976471, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "v"
+
+[node name="teclaXminus" type="Button" parent="Teclado"]
+margin_top = 261.0
+margin_right = 17.0
+margin_bottom = 285.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0, 0.976471, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "x"
+
+[node name="teclaYminus" type="Button" parent="Teclado"]
+margin_left = 57.0
+margin_top = 261.0
+margin_right = 74.0
+margin_bottom = 285.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0, 0.976471, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "y"
+
+[node name="teclaZminus" type="Button" parent="Teclado"]
+margin_left = 114.0
+margin_top = 261.0
+margin_right = 133.0
+margin_bottom = 285.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0, 0.976471, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "z"
+
+[node name="tecla0num" type="Button" parent="Teclado"]
+margin_left = 173.0
+margin_top = 261.0
+margin_right = 189.0
+margin_bottom = 285.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0, 0.976471, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "0"
+
+[node name="tecla1num" type="Button" parent="Teclado"]
+margin_left = 229.0
+margin_top = 261.0
+margin_right = 246.0
+margin_bottom = 285.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0, 0.976471, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "1"
+
+[node name="tecla2num" type="Button" parent="Teclado"]
+margin_top = 290.0
+margin_right = 17.0
+margin_bottom = 314.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0, 0.976471, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "2"
+
+[node name="tecla3num" type="Button" parent="Teclado"]
+margin_left = 57.0
+margin_top = 290.0
+margin_right = 74.0
+margin_bottom = 314.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0, 0.976471, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "3"
+
+[node name="tecla4num" type="Button" parent="Teclado"]
+margin_left = 114.0
+margin_top = 290.0
+margin_right = 133.0
+margin_bottom = 314.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0, 0.976471, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "4"
+
+[node name="tecla5num" type="Button" parent="Teclado"]
+margin_left = 173.0
+margin_top = 290.0
+margin_right = 189.0
+margin_bottom = 314.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0, 0.976471, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "5"
+
+[node name="telca6num" type="Button" parent="Teclado"]
+margin_left = 229.0
+margin_top = 290.0
+margin_right = 246.0
+margin_bottom = 314.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0, 0.976471, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "6"
+
+[node name="tecla7num" type="Button" parent="Teclado"]
+margin_top = 319.0
+margin_right = 17.0
+margin_bottom = 343.0
+focus_neighbour_bottom = NodePath("../../aceptar")
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0, 0.976471, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "7"
+
+[node name="telca8num" type="Button" parent="Teclado"]
+margin_left = 57.0
+margin_top = 319.0
+margin_right = 74.0
+margin_bottom = 343.0
+focus_neighbour_bottom = NodePath("../../aceptar")
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0, 0.976471, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "8"
+
+[node name="tecla9num" type="Button" parent="Teclado"]
+margin_left = 114.0
+margin_top = 319.0
+margin_right = 133.0
+margin_bottom = 343.0
+focus_neighbour_bottom = NodePath("../../aceptar")
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 0, 0.976471, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "9"
+
+[node name="regresar" type="Button" parent="Teclado"]
+margin_left = 173.0
+margin_top = 319.0
+margin_right = 189.0
+margin_bottom = 343.0
+focus_neighbour_bottom = NodePath("../../aceptar")
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 1, 0, 0, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 0, 0, 1 )
+custom_fonts/font = SubResource( 11 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+action_mode = 0
+shortcut = SubResource( 13 )
+text = "D"
+
+[node name="aceptar" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -48.0
+margin_top = -100.0
+margin_right = 48.0
+margin_bottom = -48.0
+focus_neighbour_top = NodePath("../Teclado/tecla9num")
+mouse_filter = 2
+texture_normal = ExtResource( 3 )
+expand = true
+
+[node name="anim" type="AnimationPlayer" parent="aceptar"]
+anims/focus = SubResource( 19 )
+
+[node name="anim" type="AnimationPlayer" parent="."]
+anims/appear = SubResource( 15 )
+
+[node name="textappear" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+pitch_scale = 2.37
+
+[node name="timerdeletetext" type="Timer" parent="."]
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "appear"
+anims/RESET = SubResource( 16 )
+anims/appear = SubResource( 17 )
+
+[connection signal="pressed" from="Teclado/teclaAmayus" to="." method="_on_teclaAmayus_pressed"]
+[connection signal="pressed" from="Teclado/teclaBmayus" to="." method="_on_teclaBmayus_pressed"]
+[connection signal="pressed" from="Teclado/teclaCmayus" to="." method="_on_teclaCmayus_pressed"]
+[connection signal="pressed" from="Teclado/teclaDmayus" to="." method="_on_teclaDmayus_pressed"]
+[connection signal="pressed" from="Teclado/teclaEmayus" to="." method="_on_teclaEmayus_pressed"]
+[connection signal="pressed" from="Teclado/teclaFmayus" to="." method="_on_teclaFmayus_pressed"]
+[connection signal="pressed" from="Teclado/teclaGmayus" to="." method="_on_teclaGmayus_pressed"]
+[connection signal="pressed" from="Teclado/teclaHmayus" to="." method="_on_teclaHmayus_pressed"]
+[connection signal="pressed" from="Teclado/teclaImayus" to="." method="_on_teclaImayus_pressed"]
+[connection signal="pressed" from="Teclado/teclaJmayus" to="." method="_on_teclaJmayus_pressed"]
+[connection signal="pressed" from="Teclado/teclaKmayus" to="." method="_on_teclaKmayus_pressed"]
+[connection signal="pressed" from="Teclado/teclaLmayus" to="." method="_on_teclaLmayus_pressed"]
+[connection signal="pressed" from="Teclado/teclaMmayus" to="." method="_on_teclaMmayus_pressed"]
+[connection signal="pressed" from="Teclado/teclaNmayus" to="." method="_on_teclaNmayus_pressed"]
+[connection signal="pressed" from="Teclado/teclaOmayus" to="." method="_on_teclaOmayus_pressed"]
+[connection signal="pressed" from="Teclado/teclaPmayus" to="." method="_on_teclaPmayus_pressed"]
+[connection signal="pressed" from="Teclado/teclaQmayus" to="." method="_on_teclaQmayus_pressed"]
+[connection signal="pressed" from="Teclado/teclaRmayus" to="." method="_on_teclaRmayus_pressed"]
+[connection signal="pressed" from="Teclado/teclaSmayus" to="." method="_on_teclaSmayus_pressed"]
+[connection signal="pressed" from="Teclado/teclaTmayus" to="." method="_on_teclaTmayus_pressed"]
+[connection signal="pressed" from="Teclado/teclaVmayus" to="." method="_on_teclaVmayus_pressed"]
+[connection signal="pressed" from="Teclado/teclaXmayus" to="." method="_on_teclaXmayus_pressed"]
+[connection signal="pressed" from="Teclado/teclaYmayus" to="." method="_on_teclaYmayus_pressed"]
+[connection signal="pressed" from="Teclado/teclaZmayus" to="." method="_on_teclaZmayus_pressed"]
+[connection signal="pressed" from="Teclado/teclaAminus" to="." method="_on_teclaAminus_pressed"]
+[connection signal="pressed" from="Teclado/teclaBminus" to="." method="_on_teclaBminus_pressed"]
+[connection signal="pressed" from="Teclado/teclaCminus" to="." method="_on_teclaCminus_pressed"]
+[connection signal="pressed" from="Teclado/teclaDminus" to="." method="_on_teclaDminus_pressed"]
+[connection signal="pressed" from="Teclado/teclaEminus" to="." method="_on_teclaEminus_pressed"]
+[connection signal="pressed" from="Teclado/teclaFminus" to="." method="_on_teclaFminus_pressed"]
+[connection signal="pressed" from="Teclado/teclaGminus" to="." method="_on_teclaGminus_pressed"]
+[connection signal="pressed" from="Teclado/teclaHminus" to="." method="_on_teclaHminus_pressed"]
+[connection signal="pressed" from="Teclado/teclaIminus" to="." method="_on_teclaIminus_pressed"]
+[connection signal="pressed" from="Teclado/teclaJminus" to="." method="_on_teclaJminus_pressed"]
+[connection signal="pressed" from="Teclado/teclaKminus" to="." method="_on_teclaKminus_pressed"]
+[connection signal="pressed" from="Teclado/teclaLminus" to="." method="_on_teclaLminus_pressed"]
+[connection signal="pressed" from="Teclado/teclaMminus" to="." method="_on_teclaMminus_pressed"]
+[connection signal="pressed" from="Teclado/teclaNminus" to="." method="_on_teclaNminus_pressed"]
+[connection signal="pressed" from="Teclado/teclaOminus" to="." method="_on_teclaOminus_pressed"]
+[connection signal="pressed" from="Teclado/teclaPminus" to="." method="_on_teclaPminus_pressed"]
+[connection signal="pressed" from="Teclado/teclaQminus" to="." method="_on_teclaQminus_pressed"]
+[connection signal="pressed" from="Teclado/teclaRminus" to="." method="_on_teclaRminus_pressed"]
+[connection signal="pressed" from="Teclado/teclaSminus" to="." method="_on_teclaSminus_pressed"]
+[connection signal="pressed" from="Teclado/teclaTminus" to="." method="_on_teclaTminus_pressed"]
+[connection signal="pressed" from="Teclado/teclaVminus" to="." method="_on_teclaVminus_pressed"]
+[connection signal="pressed" from="Teclado/teclaXminus" to="." method="_on_teclaXminus_pressed"]
+[connection signal="pressed" from="Teclado/teclaYminus" to="." method="_on_teclaYminus_pressed"]
+[connection signal="pressed" from="Teclado/teclaZminus" to="." method="_on_teclaZminus_pressed"]
+[connection signal="pressed" from="Teclado/tecla0num" to="." method="_on_tecla0num_pressed"]
+[connection signal="pressed" from="Teclado/tecla1num" to="." method="_on_tecla1num_pressed"]
+[connection signal="pressed" from="Teclado/tecla2num" to="." method="_on_tecla2num_pressed"]
+[connection signal="pressed" from="Teclado/tecla3num" to="." method="_on_tecla3num_pressed"]
+[connection signal="pressed" from="Teclado/tecla4num" to="." method="_on_tecla4num_pressed"]
+[connection signal="pressed" from="Teclado/tecla5num" to="." method="_on_tecla5num_pressed"]
+[connection signal="pressed" from="Teclado/telca6num" to="." method="_on_telca6num_pressed"]
+[connection signal="pressed" from="Teclado/tecla7num" to="." method="_on_tecla7num_pressed"]
+[connection signal="pressed" from="Teclado/telca8num" to="." method="_on_telca8num_pressed"]
+[connection signal="pressed" from="Teclado/tecla9num" to="." method="_on_tecla9num_pressed"]
+[connection signal="button_down" from="Teclado/regresar" to="." method="_on_regresar_button_down"]
+[connection signal="button_up" from="Teclado/regresar" to="." method="_on_regresar_button_up"]
+[connection signal="pressed" from="Teclado/regresar" to="." method="_on_regresar_pressed"]
+[connection signal="focus_entered" from="aceptar" to="." method="_on_aceptar_focus_entered"]
+[connection signal="focus_exited" from="aceptar" to="." method="_on_aceptar_focus_exited"]
+[connection signal="pressed" from="aceptar" to="." method="_on_aceptar_pressed"]
+[connection signal="timeout" from="timerdeletetext" to="." method="_on_timerdeletetext_timeout"]

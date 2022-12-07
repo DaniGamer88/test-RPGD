@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/encounterenemy.mp3-ccd24bb6f70779d94e5a462623e2a95e.mp3str"
+
+[deps]
+
+source_file="res://Main Resources/Sonidos/Ambiente/encounters/encounterenemy.mp3"
+dest_files=[ "res://.import/encounterenemy.mp3-ccd24bb6f70779d94e5a462623e2a95e.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

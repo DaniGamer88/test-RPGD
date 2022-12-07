@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/menuLoop.mp3-04c315523c8fb5a4308ffc55c26315e7.mp3str"
+
+[deps]
+
+source_file="res://Main Resources/Sonidos/Interfaz/menuLoop.mp3"
+dest_files=[ "res://.import/menuLoop.mp3-04c315523c8fb5a4308ffc55c26315e7.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

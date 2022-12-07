@@ -1,0 +1,164 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Main Resources/Sprites/Interfaz/StartScreen/182 sin título_20211021094348.png" type="Texture" id=1]
+[ext_resource path="res://Main Resources/Sprites/Interfaz/StartScreen/TG (3).png" type="Texture" id=2]
+[ext_resource path="res://Main Resources/Sprites/Interfaz/StartScreen/TG (7).png" type="Texture" id=3]
+[ext_resource path="res://Main Resources/Sprites/Interfaz/StartScreen/TG (6).png" type="Texture" id=4]
+[ext_resource path="res://Main Resources/Sprites/Interfaz/StartScreen/TG (1).png" type="Texture" id=5]
+[ext_resource path="res://Main Resources/Sprites/Interfaz/StartScreen/TG (5).png" type="Texture" id=6]
+[ext_resource path="res://Main Resources/Sprites/Interfaz/StartScreen/TG (4).png" type="Texture" id=7]
+[ext_resource path="res://Main Resources/Sprites/Interfaz/StartScreen/TG (2).png" type="Texture" id=8]
+[ext_resource path="res://Main Resources/Sprites/Interfaz/StartScreen/85 sin título_20220218151603.png" type="Texture" id=10]
+[ext_resource path="res://Main Resources/Sonidos/Interfaz/PRESS START.wav" type="AudioStream" id=11]
+[ext_resource path="res://Main Resources/Fuentes/PixelatedPusab.ttf" type="DynamicFontData" id=12]
+[ext_resource path="res://Escenas/Interfaces/Menu/PRSSTART.gd" type="Script" id=13]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 5 ), ExtResource( 2 ), ExtResource( 7 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 6 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "move-on",
+"speed": 20.0
+} ]
+
+[sub_resource type="DynamicFont" id=2]
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 12 )
+
+[sub_resource type="DynamicFont" id=3]
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 12 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "prss"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:custom_fonts/font:size")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 0.450625, 0.0525561 ),
+"update": 0,
+"values": [ 16, 40 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:self_modulate")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 0.196146, 0.196146, 0.196146 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "wait"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:custom_fonts/font:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 16 ]
+}
+
+[node name="PRSSTART" type="CanvasLayer"]
+layer = -1
+script = ExtResource( 13 )
+
+[node name="background" type="Sprite" parent="."]
+self_modulate = Color( 0, 0.227451, 1, 1 )
+texture = ExtResource( 10 )
+centered = false
+
+[node name="PrincipalTittle" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -283.5
+margin_top = -201.0
+margin_right = 283.5
+margin_bottom = 9.0
+texture = ExtResource( 1 )
+expand = true
+
+[node name="Tittle2" type="AnimatedSprite" parent="PrincipalTittle"]
+position = Vector2( 276.981, 195 )
+scale = Vector2( 1.34615, 1.34615 )
+frames = SubResource( 1 )
+animation = "move-on"
+frame = 2
+playing = true
+
+[node name="versiontxt" type="Label" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -335.0
+margin_top = -16.0
+custom_fonts/font = SubResource( 2 )
+text = "Demo 1"
+align = 2
+autowrap = true
+
+[node name="prss" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -293.0
+margin_top = 114.0
+margin_right = 293.0
+margin_bottom = 158.0
+custom_fonts/font = SubResource( 3 )
+text = "Presiona para comenzar"
+align = 1
+
+[node name="anim" type="AnimationPlayer" parent="prss"]
+autoplay = "wait"
+anims/prss = SubResource( 4 )
+anims/wait = SubResource( 5 )
+
+[node name="text_random" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -218.0
+margin_top = 164.0
+margin_right = 213.0
+margin_bottom = 237.0
+custom_colors/font_color = Color( 1, 0.964706, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "no se que poner aqui"
+align = 1
+autowrap = true
+
+[node name="press" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )

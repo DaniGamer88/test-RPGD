@@ -1,0 +1,221 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Escenas/Interfaces/BattleInterface/PlayerInterface.gd" type="Script" id=1]
+[ext_resource path="res://Main Resources/Fuentes/Coder's Crux.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Main Resources/Fuentes/IconBitOne.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Main Resources/Fuentes/PKMN RBYGSC.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Main Resources/Fuentes/Lady Radical.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Main Resources/Sprites/Interfaz/BattleInterface/arrow_s.png" type="Texture" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[sub_resource type="DynamicFont" id=2]
+size = 15
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=4]
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=5]
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 5 )
+
+[sub_resource type="Shader" id=6]
+code = "shader_type canvas_item;
+
+uniform vec4 color : hint_color = vec4(1.0);
+uniform float width : hint_range(0, 10) = 1.0;
+uniform int pattern : hint_range(0, 2) = 0; // diamond, circle, square
+uniform bool inside = false;
+uniform bool add_margins = true; // only useful when inside is false
+
+void vertex() {
+	if (add_margins) {
+		VERTEX += (UV * 2.0 - 1.0) * width;
+	}
+}
+
+bool hasContraryNeighbour(vec2 uv, vec2 texture_pixel_size, sampler2D texture) {
+	for (float i = -ceil(width); i <= ceil(width); i++) {
+		float x = abs(i) > width ? width * sign(i) : i;
+		float offset;
+		
+		if (pattern == 0) {
+			offset = width - abs(x);
+		} else if (pattern == 1) {
+			offset = floor(sqrt(pow(width + 0.5, 2) - x * x));
+		} else if (pattern == 2) {
+			offset = width;
+		}
+		
+		for (float j = -ceil(offset); j <= ceil(offset); j++) {
+			float y = abs(j) > offset ? offset * sign(j) : j;
+			vec2 xy = uv + texture_pixel_size * vec2(x, y);
+			
+			if ((xy != clamp(xy, vec2(0.0), vec2(1.0)) || texture(texture, xy).a == 0.0) == inside) {
+				return true;
+			}
+		}
+	}
+	
+	return false;
+}
+
+void fragment() {
+	vec2 uv = UV;
+	
+	if (add_margins) {
+		vec2 texture_pixel_size = vec2(1.0) / (vec2(1.0) / TEXTURE_PIXEL_SIZE + vec2(width * 2.0));
+		
+		uv = (uv - texture_pixel_size * width) * TEXTURE_PIXEL_SIZE / texture_pixel_size;
+		
+		if (uv != clamp(uv, vec2(0.0), vec2(1.0))) {
+			COLOR.a = 0.0;
+		} else {
+			COLOR = texture(TEXTURE, uv);
+		}
+	} else {
+		COLOR = texture(TEXTURE, uv);
+	}
+	
+	if ((COLOR.a > 0.0) == inside && hasContraryNeighbour(uv, TEXTURE_PIXEL_SIZE, TEXTURE)) {
+		COLOR.rgb = inside ? mix(COLOR.rgb, color.rgb, color.a) : color.rgb;
+		COLOR.a += (1.0 - COLOR.a) * color.a;
+	}
+}"
+
+[sub_resource type="ShaderMaterial" id=7]
+shader = SubResource( 6 )
+shader_param/color = Color( 0, 0, 0, 1 )
+shader_param/width = 1.467
+shader_param/pattern = 2
+shader_param/inside = true
+shader_param/add_margins = true
+
+[sub_resource type="Animation" id=8]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -2.85181, -64.9043 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "move"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ Vector2( -2.852, -60 ), Vector2( -2.852, -57 ) ]
+}
+
+[node name="PlayerInterface" type="Area2D"]
+position = Vector2( 130, 355 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="hitbox" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="name_text" type="Label" parent="."]
+margin_left = -113.0
+margin_top = -163.0
+margin_right = 115.0
+margin_bottom = -133.0
+custom_fonts/font = SubResource( 2 )
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+
+[node name="Lv_text" type="Label" parent="."]
+margin_left = -33.0
+margin_top = -141.0
+margin_right = 32.0
+margin_bottom = -127.0
+custom_fonts/font = SubResource( 4 )
+text = "Lv 1"
+align = 1
+valign = 1
+
+[node name="Icono" type="Label" parent="."]
+margin_left = -13.0
+margin_top = -128.0
+margin_right = 12.0
+margin_bottom = -108.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "w"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+
+[node name="vida_text" type="Label" parent="."]
+margin_left = -86.0
+margin_top = -111.0
+margin_right = 83.0
+margin_bottom = -97.0
+custom_fonts/font = SubResource( 4 )
+text = "1000/1000"
+align = 1
+valign = 1
+
+[node name="Icono2" type="Label" parent="."]
+margin_left = -17.0
+margin_top = -97.0
+margin_right = 15.0
+margin_bottom = -77.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "tp"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+
+[node name="tp_text" type="Label" parent="."]
+margin_left = -86.0
+margin_top = -82.0
+margin_right = 83.0
+margin_bottom = -68.0
+custom_fonts/font = SubResource( 4 )
+text = "1000/1000"
+align = 1
+valign = 1
+
+[node name="arrow" type="Sprite" parent="."]
+material = SubResource( 7 )
+position = Vector2( -2.85181, -64.9043 )
+texture = ExtResource( 6 )
+
+[node name="animation" type="AnimationPlayer" parent="arrow"]
+autoplay = "move"
+anims/RESET = SubResource( 8 )
+anims/move = SubResource( 9 )

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/press_arch.wav-eadc0d8655b0c9bb362ba1820be75d5d.sample"
+
+[deps]
+
+source_file="res://Main Resources/Sonidos/Interfaz/press_arch.wav"
+dest_files=[ "res://.import/press_arch.wav-eadc0d8655b0c9bb362ba1820be75d5d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
